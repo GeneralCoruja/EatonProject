@@ -1,0 +1,12 @@
+# GIT files
+.git/
+
+# Rider files
+.idea/
+
+# Project files
+EatonAPI/obj/
+EatonAPI/bin/
+
+EatonAPI.Database/obj/
+EatonAPI.Database/bin/

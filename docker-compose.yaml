@@ -1,0 +1,28 @@
+version: "3.8"
+services:
+    eaton-api:
+      container_name: eaton-api
+      build:
+        context: .
+        dockerfile: Dockerfile
+      ports: 
+        -  "8080:8080"
+      depends_on:
+        - mongo-db
+    
+    mongo-db:
+      container_name: mongo-db
+      image: mongo:7.0
+      environment:
+        - MONGO_INITDB_DATABASE=EatonDB
+        - MONGO_INITDB_ROOT_USERNAME=admin
+        - MONGO_INITDB_ROOT_PASSWORD=admin
+      ports:
+        - 27017:27017
+      volumes:
+        - mongo-data:/data/db
+          
+          
+volumes:
+  mongo-data: 
+    driver: local

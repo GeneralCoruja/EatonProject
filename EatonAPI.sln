@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EatonAPI", "EatonAPI\EatonAPI.csproj", "{8639547A-E7F4-4C2D-ACB4-A473F70FF7C4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EatonAPI.Database", "EatonAPI.Database\EatonAPI.Database.csproj", "{132182C5-729A-4476-BF3E-DE6AC23D3B3E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8639547A-E7F4-4C2D-ACB4-A473F70FF7C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8639547A-E7F4-4C2D-ACB4-A473F70FF7C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8639547A-E7F4-4C2D-ACB4-A473F70FF7C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8639547A-E7F4-4C2D-ACB4-A473F70FF7C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{132182C5-729A-4476-BF3E-DE6AC23D3B3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{132182C5-729A-4476-BF3E-DE6AC23D3B3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{132182C5-729A-4476-BF3E-DE6AC23D3B3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{132182C5-729A-4476-BF3E-DE6AC23D3B3E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
