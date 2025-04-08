@@ -1,10 +1,10 @@
-﻿namespace EatonAPI.Database
-{
-    using EatonAPI.Database.Clients;
-    using EatonAPI.Database.Entities;
-    using Microsoft.Extensions.Options;
-    using MongoDB.Driver;
+﻿using EatonAPI.Database.Clients;
+using EatonAPI.Database.Entities;
+using Microsoft.Extensions.Options;
+using MongoDB.Driver;
 
+namespace EatonAPI.Database
+{
     public class MongoDatabase
     {
         public DeviceClient Devices { get; set; }

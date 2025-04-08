@@ -1,21 +1,27 @@
+using EatonAPI.Database;
+using EatonAPI.Database.Clients;
+using EatonAPI.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-var app = builder.Build();
+// Add Database configuration
+builder.Services.Configure<DatabaseSettings>(builder.Configuration.GetSection("Database"));
+builder.Services.AddSingleton<MongoDatabase>();
 
-// Configure the HTTP request pipeline.
-// if (app.Environment.IsDevelopment())
-// {
-//    
-// }
+// Add Services
+builder.Services.AddSingleton<IDeviceService, DeviceService>();
+
+var app = builder.Build();
 
 app.UseSwagger();
 app.UseSwaggerUI();
 
 // app.UseHttpsRedirection();
 
+app.MapControllers();
 app.Run();

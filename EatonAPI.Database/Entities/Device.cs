@@ -1,3 +1,5 @@
+using MongoDB.Bson;
+
 namespace EatonAPI.Database.Entities
 {
     using MongoDB.Bson.Serialization.Attributes;
@@ -6,6 +8,7 @@ namespace EatonAPI.Database.Entities
     {
         [BsonId] 
         [BsonElement("id")]
+        [BsonGuidRepresentation(GuidRepresentation.Standard)]
         public Guid Id { get; set; }
 
         [BsonElement("name")]
