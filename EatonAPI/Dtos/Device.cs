@@ -1,4 +1,4 @@
-namespace EatonAPI.Models;
+namespace EatonAPI.Dtos;
 
 public class Device
 {

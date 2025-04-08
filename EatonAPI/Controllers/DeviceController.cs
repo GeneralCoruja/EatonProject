@@ -1,6 +1,5 @@
-using EatonAPI.Models;
+using EatonAPI.Dtos;
 using EatonAPI.Services;
-using Microsoft.AspNetCore.Http.Extensions;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EatonAPI.Controllers
@@ -19,24 +18,25 @@ namespace EatonAPI.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
-            var result = await _deviceService.GetAllAsync();
+            var devices = await _deviceService.GetAllAsync();
+            var result = new EnumeratedResult<Device>(devices);
             return Ok(result);
         }
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(Guid id)
         {
-            var result = await _deviceService.GetByIdAsync(id);
-            if (result == null)
+            var device = await _deviceService.GetByIdAsync(id);
+            if (device == null)
             {
                 return NotFound();
             }
 
-            return Ok(result);
+            return Ok(device);
         }
-
+        
         [HttpPost]
-        public async Task<IActionResult> CreateDevice(CreateDeviceRequest request)
+        public async Task<IActionResult> Create([FromBody] CreateDeviceRequest request)
         {
             try
             {
@@ -50,9 +50,9 @@ namespace EatonAPI.Controllers
         }
 
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteDevice(Guid id)
+        public async Task<IActionResult> DeleteAsync(Guid id)
         {
-            _deviceService.DeleteAsync(id);
+            await _deviceService.DeleteAsync(id);
             return NoContent();
         }
     }

@@ -1,6 +1,6 @@
 using EatonAPI.Database;
 using EatonAPI.Services.Extensions;
-using EatonAPI.Models;
+using EatonAPI.Dtos;
 using EatonAPI.Services.Validators;
 
 namespace EatonAPI.Services;
@@ -28,7 +28,7 @@ public class DeviceService : IDeviceService
     public async Task<Device> CreateAsync(CreateDeviceRequest request)
     {
         // validate request
-        DeviceValidator.ValidateCreateDeviceRequest(request);
+        request.Validate();
         
         // create new device
         var newDevice = new Device

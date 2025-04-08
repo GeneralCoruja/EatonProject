@@ -1,12 +1,12 @@
-using EatonAPI.Models;
+using EatonAPI.Dtos;
 
 namespace EatonAPI.Services.Validators
 {
     public static class DeviceValidator
     {
-        private const int _NameMaxLength = 24;
+        private const int MaxNameLength = 24;
         
-        public static void ValidateCreateDeviceRequest(CreateDeviceRequest request)
+        public static void Validate(this CreateDeviceRequest request)
         {
             if (request == null)
             {
@@ -23,9 +23,9 @@ namespace EatonAPI.Services.Validators
                 throw new ArgumentException("Name must not be empty", "request.Name");
             }
 
-            if (request.Name.Length > _NameMaxLength)
+            if (request.Name.Length > MaxNameLength)
             {
-                throw new ArgumentException($"Name cannot be longer than {_NameMaxLength} characters", "request.Name");
+                throw new ArgumentException($"Name cannot be longer than {MaxNameLength} characters", "request.Name");
             }
         }
     }

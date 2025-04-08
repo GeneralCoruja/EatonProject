@@ -1,4 +1,4 @@
-using Model = EatonAPI.Models;
+using Model = EatonAPI.Dtos;
 using Entity = EatonAPI.Database.Entities;
 
 namespace EatonAPI.Services.Extensions

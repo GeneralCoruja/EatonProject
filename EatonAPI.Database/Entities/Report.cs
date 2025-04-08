@@ -1,3 +1,4 @@
+using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
 namespace EatonAPI.Database.Entities
@@ -6,7 +7,12 @@ namespace EatonAPI.Database.Entities
     {
         [BsonId]
         [BsonElement("id")]
+        [BsonGuidRepresentation(GuidRepresentation.Standard)]
         public Guid Id { get; set; }
+        
+        [BsonElement("deviceId")]
+        [BsonGuidRepresentation(GuidRepresentation.Standard)]
+        public Guid DeviceId { get; set; }
         
         [BsonElement("message")]
         public string Message { get; set; }

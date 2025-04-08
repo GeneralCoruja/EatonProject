@@ -1,4 +1,4 @@
-using EatonAPI.Models;
+using EatonAPI.Dtos;
 
 namespace EatonAPI.Services
 {

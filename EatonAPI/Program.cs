@@ -15,6 +15,7 @@ builder.Services.AddSingleton<MongoDatabase>();
 
 // Add Services
 builder.Services.AddSingleton<IDeviceService, DeviceService>();
+builder.Services.AddSingleton<IReportService, ReportService>();
 
 var app = builder.Build();
 
