@@ -49,11 +49,12 @@ namespace EatonAPI.Controllers
             }
         }
 
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteAsync(Guid id)
-        {
-            await _deviceService.DeleteAsync(id);
-            return NoContent();
-        }
+        // Development only
+        // [HttpDelete("{id}")]
+        // public async Task<IActionResult> DeleteAsync(Guid id)
+        // {
+        //     await _deviceService.DeleteAsync(id);
+        //     return NoContent();
+        // }
     }
 }

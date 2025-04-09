@@ -31,6 +31,13 @@ public class ReportService : IReportService
         // validate the report request
         request.Validate();
         
+        // validate the reports deviceID exists
+        var device = await _database.Devices.GetByIdAsync(request.DeviceId);
+        if (device == null || device.Id == Guid.Empty)
+        {
+            throw new NullReferenceException("Device not found");
+        }
+
         // create new report
         var newReport = new Report
         {
